@@ -1,0 +1,8 @@
+{
+  "title": "AI 写完代码不算完：换个干净上下文的评审 agent，拿合同打分过线才放行",
+  "summary": "AI 写完代码不算完——他只会自夸。换一个上下文干净的评审 agent，拿一份事先写好的加权合同逐条打分、过线才放行；不过就带具体 bug 反馈打回重写。",
+  "author": "Gary Wang",
+  "date": "2026-06-12",
+  "slug": "fresh-reviewer-contract",
+  "tags": ["AI Agent", "Claude Code", "代码审查", "Anthropic", "软件工程"]
+}

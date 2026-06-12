@@ -1,0 +1,8 @@
+{
+  "title": "OpenSpec 文档太多读不动？我用 LLM wiki 给它们建索引",
+  "summary": "OpenSpec + Superpowers 把规格写到机器满意，代价是文档爆炸、人读不动。我借 Karpathy 的 LLM wiki 思路，让 LLM 把散落的 spec 重新织成带索引的互链 wiki——spec 给机器，wiki 给人。",
+  "author": "Gary Wang",
+  "date": "2026-06-12",
+  "slug": "openspec-llm-wiki",
+  "tags": ["OpenSpec", "Claude Code", "AI Agent", "技术文档", "Karpathy"]
+}

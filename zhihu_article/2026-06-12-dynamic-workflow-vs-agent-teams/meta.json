@@ -1,0 +1,8 @@
+{
+  "title": "Dynamic Workflow 还是 Agent Teams？Claude Code 多 agent 怎么选",
+  "summary": "Claude Code 的多 agent 协作有两条路：Dynamic Workflow 控确定性流程，Agent Teams 管协作判断。选错了效率减半，混用才是真正的生产力。本文给四条决策规则，顺带解答「Agent Teams 必须有 Lead 吗」。",
+  "author": "Gary Wang",
+  "date": "2026-06-12",
+  "slug": "dynamic-workflow-vs-agent-teams",
+  "tags": ["Claude Code", "AI Agent", "多 agent", "workflow", "Claude"]
+}
