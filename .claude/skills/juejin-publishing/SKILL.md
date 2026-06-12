@@ -13,6 +13,8 @@ description: 当用户想写文章并发布到掘金（juejin.cn）时使用—�
 
 风格上 STYLE.md 与本文件冲突时，**以 STYLE.md 为准**。要调风格 = 改 STYLE.md，不在这里改、更不在草稿里改。
 
+**目标平台是掘金时**：STYLE.md 的 `## J. 掘金平台写作规则` 节覆盖微信规则——读完通用规则后再读 J 节，J 节优先。
+
 下面只保留机制相关的写作约束：
 
 - **字数**（STYLE.md 定预算，这里给计数命令）：
@@ -118,7 +120,7 @@ articles/2026-05-09-{slug}/
 ├── article.md           # 润色后的 markdown
 ├── cover.png            # 题图 900×383
 ├── illustration.png     # 解释图
-├── meta.json            # { title, summary, author, date, slug }
+├── meta.json            # { title, summary, author, date, slug, tags }
 └── original.md          # 用户原始输入
 ```
 
