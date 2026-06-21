@@ -1,0 +1,8 @@
+{
+  "title": "AI 写的代码，必须做 security review",
+  "summary": "AI 写得太顺，洞也写得理直气壮。Claude Code 官方 security-guidance 插件把审查提前到他写代码的当下——三层检查、对得上 OWASP Top 10、还能把你自己的规则写进去。何时用、怎么装、怎么塞进工作流，一篇讲清。",
+  "author": "gwang",
+  "date": "2026-06-16",
+  "slug": "ai-code-security-review",
+  "tags": ["Claude", "AI Agent", "信息安全", "OWASP", "代码审查"]
+}

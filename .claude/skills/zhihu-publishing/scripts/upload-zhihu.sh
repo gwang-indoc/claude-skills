@@ -276,7 +276,7 @@ def upload_image(img_path):
       3. reference https://picx.zhimg.com/{object_key}.{ext} — Zhihu recognises
          the object_key and rewrites it to its signed pic-private CDN URL.
     Returns the picx URL, or None on failure (caller leaves the local path)."""
-    import hashlib, hmac, base64
+    import hashlib, hmac, base64, time
     from email.utils import formatdate
     raw = open(img_path, "rb").read()
     md5 = hashlib.md5(raw).hexdigest()
@@ -285,41 +285,53 @@ def upload_image(img_path):
              "gif": "image/gif", "webp": "image/webp"}.get(ext, "image/png")
     url_ext = "jpg" if ext == "jpeg" else ext
 
-    # 1. prepare — ask Zhihu for an upload token. Response shape varies: a fresh
-    #    image carries upload_token + object_key; an already-known one carries
-    #    only image_id (we recover object_key from its status src below).
-    prep = request("POST", "https://api.zhihu.com/images",
-                   {"image_hash": md5, "source": "article"})
-    uf = prep.get("upload_file", {}) if isinstance(prep, dict) else {}
-    image_id   = uf.get("image_id")
-    object_key = uf.get("object_key")
-    token = prep.get("upload_token") if isinstance(prep, dict) else None
+    # Zhihu's /images response shape is inconsistent: a fresh image carries
+    # upload_token + object_key; an already-known one sometimes carries only
+    # image_id (recover object_key from its status src), and occasionally the
+    # status isn't ready yet on the first poll. Retry the whole prepare→recover
+    # a few times so a transient miss doesn't drop the image.
+    object_key = None
+    for attempt in range(4):
+        # 1. prepare — ask Zhihu for an upload token / object_key
+        prep = request("POST", "https://api.zhihu.com/images",
+                       {"image_hash": md5, "source": "article"})
+        uf = prep.get("upload_file", {}) if isinstance(prep, dict) else {}
+        image_id   = uf.get("image_id")
+        object_key = uf.get("object_key")
+        token = prep.get("upload_token") if isinstance(prep, dict) else None
 
-    # 2. PUT bytes to Aliyun OSS (Zhihu's image bucket). Harmless if already there.
-    if token and object_key:
-        date = formatdate(usegmt=True)
-        sts  = token["access_token"]
-        canon = f"PUT\n\n{ctype}\n{date}\nx-oss-security-token:{sts}\n/zhihu-pics/{object_key}"
-        sig = base64.b64encode(
-            hmac.new(token["access_key"].encode(), canon.encode(), hashlib.sha1).digest()).decode()
-        oh = {"Date": date, "Content-Type": ctype, "x-oss-security-token": sts,
-              "Authorization": f"OSS {token['access_id']}:{sig}"}
-        oreq = urllib.request.Request(
-            f"https://zhihu-pics.oss-cn-beijing.aliyuncs.com/{object_key}",
-            data=raw, headers=oh, method="PUT")
-        try:
-            urllib.request.urlopen(oreq, timeout=60)
-        except urllib.error.HTTPError as e:
-            sys.stderr.write(f"  warning: OSS PUT {e.code} for {object_key}: "
-                             f"{e.read().decode(errors='replace')[:200]}\n")
+        # 2. PUT bytes to Aliyun OSS (Zhihu's bucket). Harmless if already there.
+        if token and object_key:
+            date = formatdate(usegmt=True)
+            sts  = token["access_token"]
+            canon = f"PUT\n\n{ctype}\n{date}\nx-oss-security-token:{sts}\n/zhihu-pics/{object_key}"
+            sig = base64.b64encode(
+                hmac.new(token["access_key"].encode(), canon.encode(), hashlib.sha1).digest()).decode()
+            oh = {"Date": date, "Content-Type": ctype, "x-oss-security-token": sts,
+                  "Authorization": f"OSS {token['access_id']}:{sig}"}
+            oreq = urllib.request.Request(
+                f"https://zhihu-pics.oss-cn-beijing.aliyuncs.com/{object_key}",
+                data=raw, headers=oh, method="PUT")
+            try:
+                urllib.request.urlopen(oreq, timeout=60)
+            except urllib.error.HTTPError as e:
+                sys.stderr.write(f"  warning: OSS PUT {e.code} for {object_key}: "
+                                 f"{e.read().decode(errors='replace')[:200]}\n")
 
-    # 3. If prepare gave no object_key, recover it from the image status src.
-    if not object_key and image_id:
-        st = request("GET", f"https://api.zhihu.com/images/{image_id}")
-        m = re.search(r'(v2-[0-9a-f]+)', st.get("src", "") if isinstance(st, dict) else "")
-        object_key = m.group(1) if m else None
+        # 3. If prepare gave no object_key, recover it from the image status src.
+        if not object_key and image_id:
+            st = request("GET", f"https://api.zhihu.com/images/{image_id}")
+            m = re.search(r'(v2-[0-9a-f]+)', st.get("src", "") if isinstance(st, dict) else "")
+            object_key = m.group(1) if m else None
+
+        if object_key:
+            break
+        if attempt < 3:
+            time.sleep(1.5)
+
     if not object_key:
-        sys.stderr.write(f"  warning: no object_key for {os.path.basename(img_path)}, skipping\n")
+        sys.stderr.write(f"  warning: no object_key for {os.path.basename(img_path)} "
+                         f"after retries, skipping\n")
         return None
     return f"https://picx.zhimg.com/{object_key}.{url_ext}"
 
@@ -333,8 +345,12 @@ for local_path in re.findall(r'!\[.*?\]\((\.\/[\w\-\.]+\.(?:png|jpg|jpeg|gif|web
     if os.path.exists(abs_path):
         print(f"→ uploading {os.path.basename(abs_path)} ...", file=sys.stderr)
         url = upload_image(abs_path)
-        print(f"   → {url[:72]}...", file=sys.stderr)
-        md = md.replace(local_path, url)
+        if url:
+            print(f"   → {url[:72]}...", file=sys.stderr)
+            md = md.replace(local_path, url)
+        else:
+            sys.stderr.write(f"  warning: upload failed for {os.path.basename(abs_path)}; "
+                             f"leaving local path (image will be missing in draft)\n")
     else:
         sys.stderr.write(f"  warning: {abs_path} not found, skipping\n")
 

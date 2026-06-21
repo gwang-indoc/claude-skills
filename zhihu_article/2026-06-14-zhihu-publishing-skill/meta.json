@@ -1,0 +1,8 @@
+{
+  "title": "我写了个一键发知乎的 skill：润色、配图、上传、建草稿，一条命令搞定",
+  "summary": "我写了个发知乎的 skill：给一段草稿，一条命令就轻润色、生成题图和解释图、传知乎图床、建好草稿。这篇讲它一键做了什么，以及我踩过的几个知乎接口的坑。",
+  "author": "Gary Wang",
+  "date": "2026-06-14",
+  "slug": "zhihu-publishing-skill",
+  "tags": ["Claude Code", "知乎", "AI 写作", "Skill", "OpenAI"]
+}

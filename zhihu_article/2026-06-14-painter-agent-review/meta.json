@@ -1,0 +1,8 @@
+{
+  "title": "刷个油漆，我把 AI 里的「多 agent 互审」搬到了现实",
+  "summary": "刷房间油漆，几个师傅说法矛盾，一个外行该听谁的？我借了 vibe coding 里「另起一个干净上下文的 agent 去 review」的套路：把一个师傅的话抛给另一个去 challenge，自己当 orchestrator，从对抗里提炼最佳结论。",
+  "author": "Gary Wang",
+  "date": "2026-06-14",
+  "slug": "painter-agent-review",
+  "tags": ["AI Agent", "vibe coding", "多智能体", "思维方式", "装修"]
+}

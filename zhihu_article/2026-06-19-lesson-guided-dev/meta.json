@@ -1,0 +1,8 @@
+{
+  "title": "让 Claude Code 不再重复犯错：Lesson-Guided Development 实践",
+  "summary": "Claude Code 每次 commit、eval 后产出的 lesson，不应只存在 dev log 里。正确做法：建 .claude/lessons/ 知识库，让 lesson 在下次 coding 前主动加载，变成 active guardrails，而不是事后 checklist。",
+  "author": "gwang",
+  "date": "2026-06-19",
+  "slug": "lesson-guided-dev",
+  "tags": ["Claude Code", "AI Agent", "软件工程", "AI 编程"]
+}

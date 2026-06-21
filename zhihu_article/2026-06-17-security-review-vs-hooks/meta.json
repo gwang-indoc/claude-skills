@@ -1,0 +1,8 @@
+{
+  "title": "试了一天 Claude 安全插件，最后没用它",
+  "summary": "试了 security-guidance 插件，发现 hooks 驱动的自动审查和我要的主动质量关是两回事。最后选了 /security-review——显式调用，主动权在我。附两个好用的社区 OWASP 扫描 skill。",
+  "author": "gwang",
+  "date": "2026-06-17",
+  "slug": "security-review-vs-hooks",
+  "tags": ["Claude", "AI Agent", "信息安全", "OWASP", "Claude Code"]
+}

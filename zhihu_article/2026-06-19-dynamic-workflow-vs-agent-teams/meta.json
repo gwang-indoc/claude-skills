@@ -1,0 +1,8 @@
+{
+  "title": "Dynamic Workflow 还是 Agent Teams？四条规则帮你选",
+  "summary": "介绍 Claude Code 里 Dynamic Workflow 和 Agent Teams 两种多 agent 协作模式的核心区别，给出四条选择规则，并解释 Agent Teams 在有无 Lead 时各自适合的场景。",
+  "author": "gwang",
+  "date": "2026-06-19",
+  "slug": "dynamic-workflow-vs-agent-teams",
+  "tags": ["Claude", "AI Agent", "Claude Code", "多智能体", "大模型"]
+}

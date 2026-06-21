@@ -1,0 +1,8 @@
+{
+  "title": "模型层防不住的，让沙箱来兜底",
+  "summary": "Anthropic 用 claude.ai、Claude Code、Claude Cowork 三个产品的真实踩坑，证明了一件事：对 AI agent 的安全控制，靠模型训练是不够的，环境隔离才是真正可以依赖的硬边界。读完你会对「最小权限原则」有新的理解。",
+  "author": "gwang",
+  "date": "2026-06-20",
+  "slug": "anthropic-claude-containment",
+  "tags": ["Claude", "AI Agent", "AI安全", "大模型", "Anthropic"]
+}

@@ -1,0 +1,8 @@
+{
+  "title": "每个 Agent 一套环境，测试完自动销毁",
+  "summary": "多个 AI agent 共用测试环境会导致端口冲突、数据污染、结果不稳定。本文给出一套基于 Docker Compose 的 ephemeral E2E 环境方案，每个 agent 一套独立环境，测试完自动销毁，一行 make e2e-isolated 搞定。",
+  "author": "gwang",
+  "date": "2026-06-18",
+  "slug": "ai-agent-e2e-isolated-env",
+  "tags": ["AI Agent", "E2E 测试", "Docker", "Claude Code", "Playwright", "DevOps"]
+}
