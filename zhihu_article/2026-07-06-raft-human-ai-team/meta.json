@@ -1,0 +1,8 @@
+{
+  "title": "我给两个 AI 发了条群消息，他们自己把设计文档 review 定稿了",
+  "summary": "我把 Claude 和 Codex 拉进 Raft 的同一个频道，像 @ 同事一样派活：Claude 写审计日志设计文档，Codex 提 3 条 review 意见，两人互审 5 轮定稿。真人 + AI 组队干活的完整实测。",
+  "author": "Gary Wang",
+  "date": "2026-07-06",
+  "slug": "raft-human-ai-team",
+  "tags": ["AI Agent", "Claude", "Codex", "团队协作", "AI 编程"]
+}

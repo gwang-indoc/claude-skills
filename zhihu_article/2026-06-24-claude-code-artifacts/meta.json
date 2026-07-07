@@ -1,0 +1,8 @@
+{
+  "title": "Claude Code 的 Artifacts：把终端里那坨文本，变成能分享的实时网页",
+  "summary": "Artifacts 是 Claude Code 新出的功能——把会话成果直接发布成浏览器里的实时网页，链接私有可分享。这篇讲清它是什么、怎么开起来、四个动作怎么用，以及一定会踩的坑。",
+  "author": "gwang",
+  "date": "2026-06-24",
+  "slug": "claude-code-artifacts",
+  "tags": ["Claude", "Claude Code", "AI Agent", "AI编程", "Anthropic"]
+}

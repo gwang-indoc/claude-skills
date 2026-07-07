@@ -1,0 +1,8 @@
+{
+  "title": "Claude 企业版 MCP 连接器现在支持统一授权管理了",
+  "summary": "Anthropic 为 MCP 连接器上线了企业级统一授权管理：IT 管理员通过 Okta 等 IdP 统一配置权限，员工登录即就绪，不用一个个手动授权，支持按组分权、集中吊销和个人企业账户隔离。",
+  "author": "gwang",
+  "date": "2026-06-22",
+  "slug": "mcp-enterprise-auth",
+  "tags": ["Claude", "MCP", "企业软件", "AI Agent", "身份认证"]
+}

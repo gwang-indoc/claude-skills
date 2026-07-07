@@ -1,0 +1,8 @@
+{
+  "title": "AI 不该借你的账号做事",
+  "summary": "当 AI Agent 开始在团队里自主运行，「代理用户权限」这个老方案就不够用了。本文梳理 Anthropic Claude Tag 的 agent identity 模型——为什么 AI 需要自己的服务账号，权限如何分层配置，以及这对企业安全意味着什么。",
+  "author": "gwang",
+  "date": "2026-06-24",
+  "slug": "agent-identity-access",
+  "tags": ["Claude", "AI Agent", "企业安全", "身份认证", "访问控制"]
+}

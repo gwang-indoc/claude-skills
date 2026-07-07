@@ -1,0 +1,8 @@
+{
+  "title": "AgentMemory + Claude Code 完整使用指南：安装、启动、召回、团队共享",
+  "summary": "在 Claude Code 里装好 agentmemory 之后怎么用？这篇整理了完整工作流：server 启动与验证、/recall /remember /handoff 日常节奏、团队分层方案，以及 AUTO_COMPRESS / GRAPH_EXTRACTION / 本地 embedding 的配置路线图。",
+  "author": "gwang",
+  "date": "2026-06-26",
+  "slug": "agentmemory-claude-code-guide",
+  "tags": ["Claude Code", "AI Agent", "AgentMemory", "开发工具", "AI 编程"]
+}

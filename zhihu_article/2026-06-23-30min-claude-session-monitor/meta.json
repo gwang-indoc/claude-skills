@@ -1,0 +1,8 @@
+{
+  "title": "花 30 分钟做了个 Claude Code 实时监控器",
+  "summary": "Claude Code 把对话存成 JSONL 文件，我花半小时写了个 Node.js 工具 tail 这些文件，在浏览器里展示所有 session 的聊天内容、tool 调用和实时状态，可以多面板并排比对，开源 MIT。",
+  "author": "gwang",
+  "date": "2026-06-23",
+  "slug": "30min-claude-session-monitor",
+  "tags": ["Claude", "Claude Code", "AI 工具", "Node.js", "开发者工具"]
+}

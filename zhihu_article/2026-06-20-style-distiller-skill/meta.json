@@ -1,0 +1,8 @@
+{
+  "title": "我做了个 skill，把任何作者的写作风格蒸馏成一个文件",
+  "summary": "做了个 Claude Code skill，把一批自己写的文章样本丢进去，它分析出十个维度的写作风格，输出成一个可复用的 style.md 文件——之后让 AI 写作或润色时，先读这个文件，就不会跑偏成流水线腔。",
+  "author": "gwang",
+  "date": "2026-06-20",
+  "slug": "style-distiller-skill",
+  "tags": ["Claude", "AI Agent", "写作", "Claude Code", "风格蒸馏"]
+}

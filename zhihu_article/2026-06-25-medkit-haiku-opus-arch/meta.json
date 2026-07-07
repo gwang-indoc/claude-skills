@@ -1,0 +1,8 @@
+{
+  "title": "Haiku 演病人，Opus 打分——medkit 架构拆解",
+  "summary": "Opus 4.7 Hackathon 获奖项目 medkit 的架构核心：用 Haiku 4.5 跑实时语音患者角色，用 Opus 4.7 Managed Agent 做 OSCE 式临床评分，两个进程从不互相调用，靠 LiveKit Cloud 的共享房间相遇。",
+  "author": "gwang",
+  "date": "2026-06-25",
+  "slug": "medkit-haiku-opus-arch",
+  "tags": ["Claude", "AI Agent", "WebRTC", "医疗AI", "Claude Managed Agents"]
+}

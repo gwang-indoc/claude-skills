@@ -1,0 +1,8 @@
+{
+  "title": "wrench-board 代码库深度解析：让 AI 把电气知识编进算法",
+  "summary": "研究了黑客松项目 wrench-board 的源码，记录几个有意思的工程决定：asyncio 并行写入与缓存预热、自演化优化循环（microsolder-evolve）、三层 ElectricalGraph 数据结构、以及用 MRR + cascade recall 评估诊断算法并防止 Goodhart's Law 的完整机制。",
+  "author": "gwang",
+  "date": "2026-06-25",
+  "slug": "wrench-board-code-analysis",
+  "tags": ["AI Agent", "Python", "Claude", "软件架构", "黑客松"]
+}

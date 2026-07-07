@@ -1,0 +1,8 @@
+{
+  "title": "AI Agent 真正进生产，需要的不是更聪明的模型",
+  "summary": "Claude Managed Agents 把 reasoning layer 和执行沙箱拆开，解决了 Agent 上生产的三个根本问题：凭证安全、冷启动延迟、状态脆弱。Notion 用它把 12 小时工作压到 20 分钟，Sentry 几周内跑通了自动修复流水线。",
+  "author": "gwang",
+  "date": "2026-06-24",
+  "slug": "claude-managed-agents",
+  "tags": ["Claude", "AI Agent", "大模型", "软件工程", "Anthropic"]
+}

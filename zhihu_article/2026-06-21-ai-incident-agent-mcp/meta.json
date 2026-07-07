@@ -1,0 +1,8 @@
+{
+  "title": "深夜三点的报警，能不能让 AI 帮我接？",
+  "summary": "从央企 IT support 的深夜 oncall 经历出发，探讨如何用 Claude Code + MCP 构建受控的 AI Incident Agent——不只是自动修 bug，而是先查知识库、判断 ownership、再决定修复、转派还是升级人工。",
+  "author": "gwang",
+  "date": "2026-06-21",
+  "slug": "ai-incident-agent-mcp",
+  "tags": ["AI Agent", "Claude Code", "MCP", "SRE", "DevOps"]
+}
