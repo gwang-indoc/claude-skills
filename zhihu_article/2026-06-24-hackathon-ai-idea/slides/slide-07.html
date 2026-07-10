@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 720pt; height: 405pt;
+    font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
+    background: #FEFEF9;
+    overflow: hidden;
+    position: relative;
+  }
+  .rule-top { position: absolute; top: 0; left: 0; width: 720pt; height: 4pt; background: #C8000A; }
+  .section-bar { position: absolute; top: 34pt; left: 52pt; width: 4pt; height: 13pt; background: #C8000A; }
+  .section-label p { font-size: 11pt; font-weight: 700; letter-spacing: 0.1em; color: #1A1A1A; }
+  .section-line { position: absolute; top: 40pt; left: 78pt; width: 590pt; height: 1pt; background: #CCCCCC; }
+  .h2-block { position: absolute; top: 60pt; left: 52pt; width: 616pt; }
+  .h2-block h2 { font-family: Georgia, "Times New Roman", serif; font-size: 28pt; font-weight: 700; color: #1A1A1A; }
+
+  .rows { position: absolute; top: 120pt; left: 52pt; width: 616pt; border-top: 2pt solid #1A1A1A; }
+  .row { display: flex; border-bottom: 1pt solid #DDDDDD; padding: 16pt 0; }
+  .row .tag { width: 130pt; }
+  .row .tag p { font-size: 10pt; font-weight: 700; letter-spacing: 0.1em; color: #C8000A; text-transform: uppercase; }
+  .row .qtitle { width: 160pt; }
+  .row .qtitle p { font-family: Georgia, serif; font-size: 17pt; font-weight: 700; color: #1A1A1A; }
+  .row .qbody { width: 326pt; }
+  .row .qbody p { font-size: 12.5pt; color: #444444; line-height: 1.6; }
+
+  .closing { position: absolute; top: 305pt; left: 52pt; width: 616pt; padding-top: 16pt; border-top: 1pt solid #DDDDDD; }
+  .closing p { font-family: Georgia, serif; font-size: 13pt; font-style: italic; color: #555555; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <div class="rule-top"></div>
+
+  <div class="section-bar"></div>
+  <div class="section-label" style="position:absolute; top:31pt; left:66pt;"><p>THE INSIGHT</p></div>
+  <div class="section-line"></div>
+
+  <div class="h2-block"><h2>瓶颈挪了位置</h2></div>
+
+  <div class="rows">
+    <div class="row">
+      <div class="tag"><p>以前的瓶颈</p></div>
+      <div class="qtitle"><p>能不能写出来</p></div>
+      <div class="qbody"><p>想法再好，写不出来就是零。手最快、库最熟的人才是高手。</p></div>
+    </div>
+    <div class="row">
+      <div class="tag"><p>现在的瓶颈</p></div>
+      <div class="qtitle"><p>想不想得到</p></div>
+      <div class="qbody"><p>写出来这件事，AI 已经包了。idea 本身，才是稀缺的东西。</p></div>
+    </div>
+  </div>
+
+  <div class="closing">
+    <p>这三个作品，放在三年前，哪一个不是一个团队干上几个月的活？现在12小时，几个人就做出来了。</p>
+  </div>
+</body>
+</html>

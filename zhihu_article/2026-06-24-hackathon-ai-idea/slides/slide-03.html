@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 720pt; height: 405pt;
+    font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
+    background: #FEFEF9;
+    overflow: hidden;
+    position: relative;
+  }
+  .rule-top { position: absolute; top: 0; left: 0; width: 720pt; height: 4pt; background: #C8000A; }
+  .section-bar { position: absolute; top: 34pt; left: 52pt; width: 4pt; height: 13pt; background: #C8000A; }
+  .section-label p { font-size: 11pt; font-weight: 700; letter-spacing: 0.1em; color: #1A1A1A; }
+  .section-line { position: absolute; top: 40pt; left: 78pt; width: 590pt; height: 1pt; background: #CCCCCC; }
+  .h2-block { position: absolute; top: 60pt; left: 52pt; width: 616pt; }
+  .h2-block h2 { font-family: Georgia, "Times New Roman", serif; font-size: 26pt; font-weight: 700; color: #1A1A1A; line-height: 1.25; }
+  .h2-block p { font-family: Georgia, serif; font-size: 13pt; font-style: italic; color: #777777; margin-top: 8pt; }
+
+  .stats { position: absolute; top: 155pt; left: 52pt; width: 616pt; height: 175pt; display: flex; border-top: 2pt solid #1A1A1A; border-bottom: 1pt solid #CCCCCC; }
+  .stat { flex: 1; padding: 26pt 20pt 0; border-right: 1pt solid #DDDDDD; text-align: center; }
+  .stat:last-child { border-right: none; }
+  .stat .num p { font-family: Georgia, serif; font-size: 52pt; font-weight: 700; color: #C8000A; line-height: 1; }
+  .stat .lab p { font-size: 12pt; color: #333333; margin-top: 14pt; letter-spacing: 0.02em; }
+
+  .footnote { position: absolute; bottom: 30pt; left: 52pt; }
+  .footnote p { font-size: 10pt; color: #999999; letter-spacing: 0.03em; }
+</style>
+</head>
+<body>
+  <div class="rule-top"></div>
+
+  <div class="section-bar"></div>
+  <div class="section-label" style="position:absolute; top:31pt; left:66pt;"><p>BY THE NUMBERS</p></div>
+  <div class="section-line"></div>
+
+  <div class="h2-block">
+    <h2>Claude Opus 4.8 Build Day Hackathon</h2>
+    <p>一场12小时的比赛，重新定义了「获奖作品」的天花板</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="num"><p>12</p></div>
+      <div class="lab"><p>小时时长</p></div>
+    </div>
+    <div class="stat">
+      <div class="num"><p>310</p></div>
+      <div class="lab"><p>人到场参赛</p></div>
+    </div>
+    <div class="stat">
+      <div class="num"><p>1500+</p></div>
+      <div class="lab"><p>人报名</p></div>
+    </div>
+  </div>
+
+  <div class="footnote"><p>2026年6月13日 · 旧金山</p></div>
+</body>
+</html>

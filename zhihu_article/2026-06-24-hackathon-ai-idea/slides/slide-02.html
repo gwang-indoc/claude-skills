@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 720pt; height: 405pt;
+    font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
+    background: #FEFEF9;
+    overflow: hidden;
+    position: relative;
+  }
+  .rule-top { position: absolute; top: 0; left: 0; width: 720pt; height: 4pt; background: #C8000A; }
+  .section-bar { position: absolute; top: 34pt; left: 52pt; width: 4pt; height: 13pt; background: #C8000A; }
+  .section-label p { font-size: 11pt; font-weight: 700; letter-spacing: 0.1em; color: #1A1A1A; }
+  .section-line { position: absolute; top: 40pt; left: 78pt; width: 590pt; height: 1pt; background: #CCCCCC; }
+  .h2-block { position: absolute; top: 60pt; left: 52pt; width: 616pt; }
+  .h2-block h2 { font-family: Georgia, "Times New Roman", serif; font-size: 26pt; font-weight: 700; color: #1A1A1A; line-height: 1.25; }
+
+  .grid { position: absolute; top: 140pt; left: 52pt; width: 616pt; height: 220pt; display: flex; border: 1pt solid #CCCCCC; border-bottom: 2pt solid #1A1A1A; }
+  .col { flex: 1; padding: 22pt 26pt; position: relative; }
+  .col.left { border-right: 1pt solid #DDDDDD; }
+  .col .tag p { font-size: 9pt; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #C8000A; }
+  .col .ctitle-wrap { margin-top: 8pt; padding-bottom: 12pt; border-bottom: 1pt solid #EEEEEE; }
+  .col .ctitle-wrap p { font-family: Georgia, serif; font-size: 18pt; font-weight: 700; color: #1A1A1A; }
+  .col .body p { font-size: 12.5pt; color: #333333; line-height: 1.75; margin-top: 14pt; }
+
+  .arrow { position: absolute; top: 235pt; left: 348pt; width: 24pt; }
+  .arrow p { font-family: Georgia, serif; font-size: 20pt; color: #C8000A; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="rule-top"></div>
+
+  <div class="section-bar"></div>
+  <div class="section-label" style="position:absolute; top:31pt; left:66pt;"><p>THE SHIFT</p></div>
+  <div class="section-line"></div>
+
+  <div class="h2-block"><h2>12小时的赛制没变，比拼的核心变了</h2></div>
+
+  <div class="grid">
+    <div class="col left">
+      <div class="tag"><p>以前</p></div>
+      <div class="ctitle-wrap"><p>拼手速</p></div>
+      <div class="body"><p>代码写得快、bug少、接口接得上，是硬功夫。想法再好，写不出来就是零。</p></div>
+    </div>
+    <div class="col">
+      <div class="tag"><p>现在</p></div>
+      <div class="ctitle-wrap"><p>拼想法</p></div>
+      <div class="body"><p>AI 把人从繁重的手工 coding 里解救出来。你只要有 idea，剩下的天马行空，他帮你落地。</p></div>
+    </div>
+  </div>
+
+  <div class="arrow"><p>→</p></div>
+</body>
+</html>

@@ -10,3 +10,6 @@
 # gstack runtime state
 .claude/worktrees/
 .gstack/
+
+# Office lock/temp files
+~$*

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 编程工具时间报表</title>
+<style>
+  :root { --ink:#2c2c2c; --muted:#8a8a8a; --line:#ececec; --bg:#fafaf8; --card:#ffffff; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,"PingFang SC","Hiragino Sans GB",sans-serif;
+          background:var(--bg); color:var(--ink); padding:40px 24px 80px; }
+  .wrap { max-width:980px; margin:0 auto; }
+  h1 { font-size:26px; font-weight:700; letter-spacing:.5px; }
+  .sub { color:var(--muted); font-size:13px; margin-top:6px; }
+  h2 { font-size:16px; font-weight:600; margin:36px 0 14px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:24px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; }
+  .card-label { font-size:13px; color:var(--muted); display:flex; align-items:center; gap:6px; }
+  .card-value { font-size:32px; font-weight:700; margin-top:6px; }
+  .card-value .unit { font-size:14px; font-weight:400; color:var(--muted); margin-left:4px; }
+  .card-sub { font-size:12px; color:var(--muted); margin-top:4px; }
+  .dot { display:inline-block; width:9px; height:9px; border-radius:50%; }
+  .panel { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; }
+  .chart { display:flex; align-items:flex-end; gap:3px; height:190px; }
+  .bar { flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; min-width:0; }
+  .bar-stack { width:100%; display:flex; flex-direction:column-reverse; border-radius:3px 3px 0 0; overflow:hidden; }
+  .bar:hover .bar-stack { opacity:.75; }
+  .bar-x { font-size:9px; color:var(--muted); margin-top:5px; white-space:nowrap;
+            transform:rotate(-45deg); transform-origin:top center; height:26px; }
+  .hourchart .bar-x { transform:none; height:auto; }
+  .legend { display:flex; gap:16px; margin-top:6px; font-size:12px; color:var(--muted); }
+  .lg { display:flex; align-items:center; gap:5px; }
+  .hrow { display:flex; align-items:center; gap:12px; padding:7px 0; border-bottom:1px solid var(--line); }
+  .hrow:last-child { border-bottom:none; }
+  .hname { width:200px; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+            display:flex; align-items:center; gap:6px; flex-shrink:0; }
+  .htrack { flex:1; height:14px; background:#f3f3f0; border-radius:7px; overflow:hidden; }
+  .hfill { height:100%; border-radius:7px; }
+  .hval { width:230px; font-size:12px; text-align:right; flex-shrink:0; }
+  .muted { color:var(--muted); }
+  footer { margin-top:48px; font-size:12px; color:var(--muted); text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>AI 编程工具时间报表</h1>
+  <div class="sub">生成于 2026-06-12 15:55 · 数据来自本机 Claude Code 与 Codex 会话记录 · 活跃时长 = 相邻操作间隔 ≤ 15 分钟的累计</div>
+
+  <div class="cards">
+    <div class="card"><div class="card-label">总活跃时长</div>
+      <div class="card-value">76<span class="unit">小时</span></div>
+      <div class="card-sub">自 2026-05-13 起，30 天</div></div>
+    <div class="card"><div class="card-label"><span class="dot" style="background:#D97757"></span>Claude Code</div>
+      <div class="card-value">76<span class="unit">小时</span></div>
+      <div class="card-sub">占比 100% · 日均 2.5 小时</div></div>
+  </div>
+
+  <h2>最近 30 天每日使用</h2>
+  <div class="panel">
+    <div class="chart"><div class="bar" title="2026-05-14 · 0.0h"><div class="bar-stack"></div><div class="bar-x">05/14</div></div><div class="bar" title="2026-05-15 · 4.0h"><div class="bar-stack"><div class="seg" style="height:70.0px;background:#D97757"></div></div><div class="bar-x">05/15</div></div><div class="bar" title="2026-05-16 · 0.0h"><div class="bar-stack"></div><div class="bar-x">05/16</div></div><div class="bar" title="2026-05-17 · 0.0h"><div class="bar-stack"></div><div class="bar-x">05/17</div></div><div class="bar" title="2026-05-18 · 0.0h"><div class="bar-stack"></div><div class="bar-x">05/18</div></div><div class="bar" title="2026-05-19 · 2.6h"><div class="bar-stack"><div class="seg" style="height:45.1px;background:#D97757"></div></div><div class="bar-x">05/19</div></div><div class="bar" title="2026-05-20 · 9.1h"><div class="bar-stack"><div class="seg" style="height:160.0px;background:#D97757"></div></div><div class="bar-x">05/20</div></div><div class="bar" title="2026-05-21 · 3.4h"><div class="bar-stack"><div class="seg" style="height:59.0px;background:#D97757"></div></div><div class="bar-x">05/21</div></div><div class="bar" title="2026-05-22 · 1.5h"><div class="bar-stack"><div class="seg" style="height:25.9px;background:#D97757"></div></div><div class="bar-x">05/22</div></div><div class="bar" title="2026-05-23 · 0.5h"><div class="bar-stack"><div class="seg" style="height:8.1px;background:#D97757"></div></div><div class="bar-x">05/23</div></div><div class="bar" title="2026-05-24 · 0.3h"><div class="bar-stack"><div class="seg" style="height:5.8px;background:#D97757"></div></div><div class="bar-x">05/24</div></div><div class="bar" title="2026-05-25 · 4.2h"><div class="bar-stack"><div class="seg" style="height:73.6px;background:#D97757"></div></div><div class="bar-x">05/25</div></div><div class="bar" title="2026-05-26 · 0.8h"><div class="bar-stack"><div class="seg" style="height:14.6px;background:#D97757"></div></div><div class="bar-x">05/26</div></div><div class="bar" title="2026-05-27 · 1.9h"><div class="bar-stack"><div class="seg" style="height:34.3px;background:#D97757"></div></div><div class="bar-x">05/27</div></div><div class="bar" title="2026-05-28 · 0.7h"><div class="bar-stack"><div class="seg" style="height:12.5px;background:#D97757"></div></div><div class="bar-x">05/28</div></div><div class="bar" title="2026-05-29 · 1.5h"><div class="bar-stack"><div class="seg" style="height:27.1px;background:#D97757"></div></div><div class="bar-x">05/29</div></div><div class="bar" title="2026-05-30 · 0.8h"><div class="bar-stack"><div class="seg" style="height:14.0px;background:#D97757"></div></div><div class="bar-x">05/30</div></div><div class="bar" title="2026-05-31 · 0.1h"><div class="bar-stack"><div class="seg" style="height:1.1px;background:#D97757"></div></div><div class="bar-x">05/31</div></div><div class="bar" title="2026-06-01 · 7.3h"><div class="bar-stack"><div class="seg" style="height:128.0px;background:#D97757"></div></div><div class="bar-x">06/01</div></div><div class="bar" title="2026-06-02 · 1.6h"><div class="bar-stack"><div class="seg" style="height:27.5px;background:#D97757"></div></div><div class="bar-x">06/02</div></div><div class="bar" title="2026-06-03 · 7.2h"><div class="bar-stack"><div class="seg" style="height:127.3px;background:#D97757"></div></div><div class="bar-x">06/03</div></div><div class="bar" title="2026-06-04 · 0.0h"><div class="bar-stack"></div><div class="bar-x">06/04</div></div><div class="bar" title="2026-06-05 · 0.1h"><div class="bar-stack"><div class="seg" style="height:1.1px;background:#D97757"></div></div><div class="bar-x">06/05</div></div><div class="bar" title="2026-06-06 · 1.5h"><div class="bar-stack"><div class="seg" style="height:26.7px;background:#D97757"></div></div><div class="bar-x">06/06</div></div><div class="bar" title="2026-06-07 · 9.1h"><div class="bar-stack"><div class="seg" style="height:159.6px;background:#D97757"></div></div><div class="bar-x">06/07</div></div><div class="bar" title="2026-06-08 · 8.4h"><div class="bar-stack"><div class="seg" style="height:148.1px;background:#D97757"></div></div><div class="bar-x">06/08</div></div><div class="bar" title="2026-06-09 · 1.8h"><div class="bar-stack"><div class="seg" style="height:32.5px;background:#D97757"></div></div><div class="bar-x">06/09</div></div><div class="bar" title="2026-06-10 · 3.8h"><div class="bar-stack"><div class="seg" style="height:67.6px;background:#D97757"></div></div><div class="bar-x">06/10</div></div><div class="bar" title="2026-06-11 · 1.7h"><div class="bar-stack"><div class="seg" style="height:29.4px;background:#D97757"></div></div><div class="bar-x">06/11</div></div><div class="bar" title="2026-06-12 · 1.1h"><div class="bar-stack"><div class="seg" style="height:18.7px;background:#D97757"></div></div><div class="bar-x">06/12</div></div></div>
+    <div class="legend"><span class="lg"><span class="dot" style="background:#D97757"></span>Claude Code</span></div>
+  </div>
+
+  <h2>最近 12 周每周使用（以周一为起点）</h2>
+  <div class="panel">
+    <div class="chart" style="height:180px"><div class="bar" title="2026-03-23 · 0.0h"><div class="bar-stack"></div><div class="bar-x">03/23</div></div><div class="bar" title="2026-03-30 · 0.0h"><div class="bar-stack"></div><div class="bar-x">03/30</div></div><div class="bar" title="2026-04-06 · 0.0h"><div class="bar-stack"></div><div class="bar-x">04/06</div></div><div class="bar" title="2026-04-13 · 0.0h"><div class="bar-stack"></div><div class="bar-x">04/13</div></div><div class="bar" title="2026-04-20 · 0.0h"><div class="bar-stack"></div><div class="bar-x">04/20</div></div><div class="bar" title="2026-04-27 · 0.0h"><div class="bar-stack"></div><div class="bar-x">04/27</div></div><div class="bar" title="2026-05-04 · 0.0h"><div class="bar-stack"></div><div class="bar-x">05/04</div></div><div class="bar" title="2026-05-11 · 4.8h"><div class="bar-stack"><div class="seg" style="height:26.9px;background:#D97757"></div></div><div class="bar-x">05/11</div></div><div class="bar" title="2026-05-18 · 17.3h"><div class="bar-stack"><div class="seg" style="height:96.9px;background:#D97757"></div></div><div class="bar-x">05/18</div></div><div class="bar" title="2026-05-25 · 10.1h"><div class="bar-stack"><div class="seg" style="height:56.5px;background:#D97757"></div></div><div class="bar-x">05/25</div></div><div class="bar" title="2026-06-01 · 26.7h"><div class="bar-stack"><div class="seg" style="height:150.0px;background:#D97757"></div></div><div class="bar-x">06/01</div></div><div class="bar" title="2026-06-08 · 16.8h"><div class="bar-stack"><div class="seg" style="height:94.5px;background:#D97757"></div></div><div class="bar-x">06/08</div></div></div>
+    <div class="legend"><span class="lg"><span class="dot" style="background:#D97757"></span>Claude Code</span></div>
+  </div>
+
+  <h2>最近 12 个月每月使用</h2>
+  <div class="panel">
+    <div class="chart" style="height:180px"><div class="bar" title="2025-07 · 0.0h"><div class="bar-stack"></div><div class="bar-x">25/07</div></div><div class="bar" title="2025-08 · 0.0h"><div class="bar-stack"></div><div class="bar-x">25/08</div></div><div class="bar" title="2025-09 · 0.0h"><div class="bar-stack"></div><div class="bar-x">25/09</div></div><div class="bar" title="2025-10 · 0.0h"><div class="bar-stack"></div><div class="bar-x">25/10</div></div><div class="bar" title="2025-11 · 0.0h"><div class="bar-stack"></div><div class="bar-x">25/11</div></div><div class="bar" title="2025-12 · 0.0h"><div class="bar-stack"></div><div class="bar-x">25/12</div></div><div class="bar" title="2026-01 · 0.0h"><div class="bar-stack"></div><div class="bar-x">26/01</div></div><div class="bar" title="2026-02 · 0.0h"><div class="bar-stack"></div><div class="bar-x">26/02</div></div><div class="bar" title="2026-03 · 0.0h"><div class="bar-stack"></div><div class="bar-x">26/03</div></div><div class="bar" title="2026-04 · 0.0h"><div class="bar-stack"></div><div class="bar-x">26/04</div></div><div class="bar" title="2026-05 · 32.1h"><div class="bar-stack"><div class="seg" style="height:110.6px;background:#D97757"></div></div><div class="bar-x">26/05</div></div><div class="bar" title="2026-06 · 43.6h"><div class="bar-stack"><div class="seg" style="height:150.0px;background:#D97757"></div></div><div class="bar-x">26/06</div></div></div>
+    <div class="legend"><span class="lg"><span class="dot" style="background:#D97757"></span>Claude Code</span></div>
+  </div>
+
+  <h2>一天中的时间分布（24 小时）</h2>
+  <div class="panel hourchart">
+    <div class="chart" style="height:150px"><div class="bar" title="00:00 · 0.0h"><div class="bar-stack"></div><div class="bar-x">0</div></div><div class="bar" title="01:00 · 0.0h"><div class="bar-stack"></div><div class="bar-x">1</div></div><div class="bar" title="02:00 · 0.0h"><div class="bar-stack"></div><div class="bar-x">2</div></div><div class="bar" title="03:00 · 0.0h"><div class="bar-stack"></div><div class="bar-x">3</div></div><div class="bar" title="04:00 · 0.0h"><div class="bar-stack"></div><div class="bar-x">4</div></div><div class="bar" title="05:00 · 0.0h"><div class="bar-stack"></div><div class="bar-x">5</div></div><div class="bar" title="06:00 · 0.0h"><div class="bar-stack"></div><div class="bar-x">6</div></div><div class="bar" title="07:00 · 0.0h"><div class="bar-stack"></div><div class="bar-x">7</div></div><div class="bar" title="08:00 · 0.7h"><div class="bar-stack"><div class="seg" style="height:7.6px;background:#D97757"></div></div><div class="bar-x">8</div></div><div class="bar" title="09:00 · 6.9h"><div class="bar-stack"><div class="seg" style="height:79.2px;background:#D97757"></div></div><div class="bar-x">9</div></div><div class="bar" title="10:00 · 5.3h"><div class="bar-stack"><div class="seg" style="height:61.1px;background:#D97757"></div></div><div class="bar-x">10</div></div><div class="bar" title="11:00 · 8.2h"><div class="bar-stack"><div class="seg" style="height:94.0px;background:#D97757"></div></div><div class="bar-x">11</div></div><div class="bar" title="12:00 · 3.2h"><div class="bar-stack"><div class="seg" style="height:36.3px;background:#D97757"></div></div><div class="bar-x">12</div></div><div class="bar" title="13:00 · 5.6h"><div class="bar-stack"><div class="seg" style="height:64.5px;background:#D97757"></div></div><div class="bar-x">13</div></div><div class="bar" title="14:00 · 7.4h"><div class="bar-stack"><div class="seg" style="height:85.0px;background:#D97757"></div></div><div class="bar-x">14</div></div><div class="bar" title="15:00 · 10.4h"><div class="bar-stack"><div class="seg" style="height:120.0px;background:#D97757"></div></div><div class="bar-x">15</div></div><div class="bar" title="16:00 · 7.8h"><div class="bar-stack"><div class="seg" style="height:89.8px;background:#D97757"></div></div><div class="bar-x">16</div></div><div class="bar" title="17:00 · 3.1h"><div class="bar-stack"><div class="seg" style="height:35.8px;background:#D97757"></div></div><div class="bar-x">17</div></div><div class="bar" title="18:00 · 3.5h"><div class="bar-stack"><div class="seg" style="height:40.1px;background:#D97757"></div></div><div class="bar-x">18</div></div><div class="bar" title="19:00 · 3.5h"><div class="bar-stack"><div class="seg" style="height:40.2px;background:#D97757"></div></div><div class="bar-x">19</div></div><div class="bar" title="20:00 · 5.2h"><div class="bar-stack"><div class="seg" style="height:59.8px;background:#D97757"></div></div><div class="bar-x">20</div></div><div class="bar" title="21:00 · 2.7h"><div class="bar-stack"><div class="seg" style="height:31.4px;background:#D97757"></div></div><div class="bar-x">21</div></div><div class="bar" title="22:00 · 1.9h"><div class="bar-stack"><div class="seg" style="height:21.7px;background:#D97757"></div></div><div class="bar-x">22</div></div><div class="bar" title="23:00 · 0.3h"><div class="bar-stack"><div class="seg" style="height:3.6px;background:#D97757"></div></div><div class="bar-x">23</div></div></div>
+    <div class="legend"><span class="lg"><span class="dot" style="background:#D97757"></span>Claude Code</span></div>
+  </div>
+
+  <h2>工作分类</h2>
+  <div class="panel">
+      <div class="hrow">
+        <div class="hname"><span class="dot" style="background:#D97757"></span>其他</div>
+        <div class="htrack"><div class="hfill" style="width:94.5%;background:#D97757"></div></div>
+        <div class="hval">73.9 小时 · 94%</div>
+      </div>
+      <div class="hrow">
+        <div class="hname"><span class="dot" style="background:#4A7DBE"></span>技能与工具链</div>
+        <div class="htrack"><div class="hfill" style="width:5.5%;background:#4A7DBE"></div></div>
+        <div class="hval">4.3 小时 · 5%</div>
+      </div>
+      <div class="hrow">
+        <div class="hname"><span class="dot" style="background:#5BA88B"></span>写作与发布</div>
+        <div class="htrack"><div class="hfill" style="width:0.0%;background:#5BA88B"></div></div>
+        <div class="hval">1 分钟 · 0%</div>
+      </div>
+  </div>
+
+  <h2>项目时长 Top 20</h2>
+  <div class="panel">
+      <div class="hrow">
+        <div class="hname" title="Develop-superpowers-test-accounting-firm">Develop-superpowers-test-accounting-firm</div>
+        <div class="htrack"><div class="hfill" style="width:100.0%;background:#D97757"></div></div>
+        <div class="hval">23.4 小时 <span class="muted">· 其他 · 最近 06-01</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="github-repo-accounting-firm">github-repo-accounting-firm</div>
+        <div class="htrack"><div class="hfill" style="width:47.7%;background:#D97757"></div></div>
+        <div class="hval">11.1 小时 <span class="muted">· 其他 · 最近 06-10</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="github-repo-tt1-blueprint">github-repo-tt1-blueprint</div>
+        <div class="htrack"><div class="hfill" style="width:19.5%;background:#D97757"></div></div>
+        <div class="hval">4.6 小时 <span class="muted">· 其他 · 最近 06-03</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="Develop-vibe-coding-guide">Develop-vibe-coding-guide</div>
+        <div class="htrack"><div class="hfill" style="width:17.2%;background:#D97757"></div></div>
+        <div class="hval">4.0 小时 <span class="muted">· 其他 · 最近 06-10</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="github-repo-openspec-superpowers-bridge">github-repo-openspec-superpowers-bridge</div>
+        <div class="htrack"><div class="hfill" style="width:15.6%;background:#D97757"></div></div>
+        <div class="hval">3.7 小时 <span class="muted">· 其他 · 最近 06-11</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="github-repo-tt2-blueprint-no-graph">github-repo-tt2-blueprint-no-graph</div>
+        <div class="htrack"><div class="hfill" style="width:13.2%;background:#D97757"></div></div>
+        <div class="hval">3.1 小时 <span class="muted">· 其他 · 最近 06-03</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="Develop-noteboard">Develop-noteboard</div>
+        <div class="htrack"><div class="hfill" style="width:12.1%;background:#D97757"></div></div>
+        <div class="hval">2.8 小时 <span class="muted">· 其他 · 最近 06-07</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="openInvest">openInvest</div>
+        <div class="htrack"><div class="hfill" style="width:10.7%;background:#D97757"></div></div>
+        <div class="hval">2.5 小时 <span class="muted">· 其他 · 最近 06-10</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="github-repo-claude-skills">github-repo-claude-skills</div>
+        <div class="htrack"><div class="hfill" style="width:10.0%;background:#D97757"></div></div>
+        <div class="hval">2.3 小时 <span class="muted">· 技能与工具链 · 最近 06-12</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="Develop-test11-accounting-firm-no-cave">Develop-test11-accounting-firm-no-cave</div>
+        <div class="htrack"><div class="hfill" style="width:9.3%;background:#D97757"></div></div>
+        <div class="hval">2.2 小时 <span class="muted">· 其他 · 最近 06-01</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="github-repo-noteboard">github-repo-noteboard</div>
+        <div class="htrack"><div class="hfill" style="width:7.4%;background:#D97757"></div></div>
+        <div class="hval">1.7 小时 <span class="muted">· 其他 · 最近 06-10</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="Develop-test12-accounting-firm-cave">Develop-test12-accounting-firm-cave</div>
+        <div class="htrack"><div class="hfill" style="width:6.2%;background:#D97757"></div></div>
+        <div class="hval">1.5 小时 <span class="muted">· 其他 · 最近 06-01</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="Develop-bench-blueprint">Develop-bench-blueprint</div>
+        <div class="htrack"><div class="hfill" style="width:5.3%;background:#D97757"></div></div>
+        <div class="hval">1.2 小时 <span class="muted">· 其他 · 最近 06-02</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="github-repo-openflow">github-repo-openflow</div>
+        <div class="htrack"><div class="hfill" style="width:5.2%;background:#D97757"></div></div>
+        <div class="hval">1.2 小时 <span class="muted">· 其他 · 最近 06-07</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="temp-t1-accounting-firm-no-cave">temp-t1-accounting-firm-no-cave</div>
+        <div class="htrack"><div class="hfill" style="width:5.1%;background:#D97757"></div></div>
+        <div class="hval">1.2 小时 <span class="muted">· 其他 · 最近 06-01</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="Develop-myrepo-superpowers">Develop-myrepo-superpowers</div>
+        <div class="htrack"><div class="hfill" style="width:4.8%;background:#D97757"></div></div>
+        <div class="hval">1.1 小时 <span class="muted">· 其他 · 最近 05-23</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="Develop-claude-code-best-practice">Develop-claude-code-best-practice</div>
+        <div class="htrack"><div class="hfill" style="width:4.3%;background:#D97757"></div></div>
+        <div class="hval">1.0 小时 <span class="muted">· 技能与工具链 · 最近 06-10</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="Develop-gary-wiki">Develop-gary-wiki</div>
+        <div class="htrack"><div class="hfill" style="width:4.2%;background:#D97757"></div></div>
+        <div class="hval">59 分钟 <span class="muted">· 其他 · 最近 06-04</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="github-repo-tt1-blueprint-graph">github-repo-tt1-blueprint-graph</div>
+        <div class="htrack"><div class="hfill" style="width:3.6%;background:#D97757"></div></div>
+        <div class="hval">51 分钟 <span class="muted">· 其他 · 最近 06-10</span></div>
+      </div>
+      <div class="hrow">
+        <div class="hname" title="Develop-codegraph">Develop-codegraph</div>
+        <div class="htrack"><div class="hfill" style="width:3.6%;background:#D97757"></div></div>
+        <div class="hval">50 分钟 <span class="muted">· 其他 · 最近 05-25</span></div>
+      </div>
+  </div>
+
+  <footer>cchour · 全部数据在本机统计，未上传任何服务</footer>
+</div>
+</body>
+</html>

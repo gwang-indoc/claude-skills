@@ -1,0 +1,13 @@
+{
+  "title": "Anthropic 在 Claude 内部,找到了一块类似人类意识的\"工作区\"",
+  "title_candidates": [
+    "Anthropic 在 Claude 内部,找到了一块类似人类意识的\"工作区\"",
+    "把\"蜘蛛\"换成\"蚂蚁\",Claude 的答案就变了——它内部真的有一块\"意识空间\"",
+    "Claude 心里想的词,不一定是它嘴上说的词"
+  ],
+  "summary": "Anthropic 新研究在 Claude 内部找到一小片神经表示,叫 J-空间——它决定 Claude 心里想什么,能被报告、被干预、参与推理,像人类意识的全局工作空间。",
+  "author": "gwang",
+  "date": "2026-07-08",
+  "slug": "claude-gongzuokongjian",
+  "tags": ["Claude", "Anthropic", "AI可解释性", "大语言模型", "机器意识"]
+}
